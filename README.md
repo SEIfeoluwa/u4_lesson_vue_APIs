@@ -1,24 +1,17 @@
-# u4_lesson_vue_with_apis
+# Vue With Apis
 
-## Project setup
-```
-yarn install
-```
+![](https://miro.medium.com/max/700/1*P3ODlZMsFN3uCmnTY3smaA.png)
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## Overview
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## Getting Started
 
-### Lints and fixes files
-```
-yarn lint
-```
+- Fork and clone
+- `npm install`
+- Create a `.env` in the root of this project
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Resources
+
+- [Native Browser Geolocation Api](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+- [Openweather Api](https://openweathermap.org/api)
+- [Symbol HexCodes](https://www.toptal.com/designers/htmlarrows/math/degree-sign/)
