@@ -5,10 +5,7 @@
 <script>
 export default {
   name: 'App',
-  components: {},
-  data: () => ({
-    currentWeather: null
-  })
+  components: {}
 }
 </script>
 
