@@ -34,7 +34,6 @@ export default {
         `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.latitude}&lon=${coords.longitude}&units=imperial&appid=${API_KEY}`
       )
       this.currentWeather = res.data.current
-      console.log(new Date(this.currentWeather.dt))
       this.dailyWeather = res.data.daily
     },
     async get4DayForecast() {}
