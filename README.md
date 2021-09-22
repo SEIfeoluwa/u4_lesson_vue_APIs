@@ -1,4 +1,4 @@
-# Vue With Apis
+# Vue With APIs
 
 ![](https://miro.medium.com/max/700/1*P3ODlZMsFN3uCmnTY3smaA.png)
 
@@ -6,21 +6,21 @@
 
 - Fork and clone
 - `npm install`
-- Create a `.env` in the root of this project
+- Create a `.env` in the root directory of this project
 
 ## Overview
 
-In this lesson, we'll learn how to interact with RESTful API's utilizing VueJS. We'll be utilizing the Open Weather Map api to build a small weather application. Like most other frameworks and libraries, Vue has a component lifecycle that allows us to control what happens when a component is rendered, updated, and removed from the DOM tree. We'll utilize these component lifecycle methods to trigger a request to retrieve weather data. We'll also be utilizing the browsers native Geolocation API to retrieve a users location in order to send our API requests.
+In this lesson, we'll learn how to interact with RESTful API's utilizing VueJS. We'll be utilizing the Open Weather Map API to build a small weather application. Like most other frameworks and libraries, Vue has a component lifecycle that allows us to control what happens when a component is rendered, updated, and removed from the DOM tree. We'll utilize these component lifecycle methods to trigger a request to retrieve weather data. We'll also be utilizing the browser's native Geolocation API to retrieve a user's location in order to send our API requests.
 
 ## Getting An API Key
 
-Start by heading over to [Open Weather](https://home.openweathermap.org/users/sign_up) to sign up for an account, once you've signed up, you can head [here](https://home.openweathermap.org/api_keys) to view your api key.
+Start by heading over to [Open Weather](https://home.openweathermap.org/users/sign_up) to sign up for an account. Once you've signed up, you can head [here](https://home.openweathermap.org/api_keys) to view your API key.
 
-Take your api key and add it to the `.env` file you created earlier with a variable of `VUE_APP_WEATHER_KEY`.
+Take your API key and add it to the `.env` file you created earlier with a variable of `VUE_APP_WEATHER_KEY`.
 
 ## Vue Component Lifecycle Methods
 
-VueJS provides us with a few component lifecycle methods also known as `hooks`:
+VueJS provides us with a few component lifecycle methods that are also known as `hooks`:
 
 - mounted
 - created
@@ -28,13 +28,13 @@ VueJS provides us with a few component lifecycle methods also known as `hooks`:
 
 and more...
 
-We'll include a full list with each hooks description in the [Resources](#Resources) section down below.
+We'll include a full list with each hook's description in the [Resources](#Resources) section down below.
 
-Each method has it's own responsibility in a components lifecycle. Today we'll be using `mounted` to trigger our API calls.
+Each method has it's own responsibility in a component's lifecycle. Today, we'll be using `mounted` to trigger our API calls.
 
 ### Mounted
 
-`mounted` is a hook that is triggered when a component get's loaded onto the DOM tree. This is one of the hooks that runs right when our component loads, which makes it a great candidate to trigger an API call.
+`mounted` is a hook that is triggered when a component gets loaded onto the DOM tree. This is one of the hooks that runs right when our component loads, which makes it a great candidate to trigger an API call.
 
 ## Scaffolding Our Project
 
@@ -43,7 +43,7 @@ Let's start by creating a few pieces of state in our `App.vue`. We'll create:
 - `dailyWeather: []`,
 - `currentWeather: null`
 
-Next we'll set up a method called `getCurrentWeather` that accepts a parameter of `coords`. This method should be `async`
+Next, we'll set up a method called `getCurrentWeather` that accepts a parameter of `coords`. This method should be `async`.
 
 ```js
 methods :{
@@ -51,22 +51,22 @@ methods :{
 }
 ```
 
-Now we'll import `axios` at the top of our `script` section and create a variable to access our api key:
+Now we'll import `axios` at the top of our `script` section and create a variable to access our API key:
+
+**Note: Axios is already installed for you.**
 
 ```js
 import axios from 'axios'
 const API_KEY = process.env.VUE_APP_WEATHER_KEY
 ```
 
-**Note: Axios is already installed for you.**
-
 Inside of our `getCurrentWeather` method, we'll set up a `GET` request to the following endpoint:
 
 `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.latitude}&lon=${coords.longitude}&units=imperial&appid=${API_KEY}`
 
-**Note: Make sure to utilize ` when inputting this url**
+**Note: Make sure to utilize backticks (`) when inputting this URL**
 
-We'll plug in a few query parameters into this url using the template literal syntax:
+We'll plug in a few query parameters into this URL using the template literal syntax:
 
 ```js
 const res = await axios.get(
@@ -74,7 +74,7 @@ const res = await axios.get(
 )
 ```
 
-Finally we'll set the `current` property from the response to the `currentWeather` state:
+Finally, we'll set the `current` property from the response to the `currentWeather` state:
 
 ```js
 this.currentWeather = res.data.current
@@ -82,7 +82,7 @@ this.currentWeather = res.data.current
 
 ## Native GeoLocation Features
 
-Most browsers come with a `GeoLocation` api built in. Today we're going to leverage that to help us get the weather in our specific location.
+Most browsers come with a `GeoLocation` API built in. Today, we're going to leverage that to help us get the weather in our specific location.
 
 Start by adding `mounted(){}` below your data:
 
@@ -90,7 +90,7 @@ Start by adding `mounted(){}` below your data:
 mounted: function(){},
 ```
 
-The `mounted` method will fire once the component get's mounted onto the `DOM` tree. This is a perfect candidate to trigger a location request from our user!
+The `mounted` method will fire once the component gets mounted onto the `DOM` tree. This is a perfect candidate to trigger a location request from our user!
 
 Inside of the `mounted` function, we'll add the following:
 
@@ -98,13 +98,13 @@ Inside of the `mounted` function, we'll add the following:
 navigator.geolocation.getCurrentPosition()
 ```
 
-The `getCurrentPosition` function accepts `1` argument which will be a callback function. Once slight change however, we're going to be invoking our `getCurrentWeather` function from earlier in this callback which means it needs to be `async`. Let's add this callback:
+The `getCurrentPosition` function accepts `1` argument which will be a callback function. One slight change however, we're going to be invoking our `getCurrentWeather` function from earlier in this callback, which means it needs to be `async`. Let's add this callback:
 
 ```js
 navigator.geolocation.getCurrentPosition(async () => {})
 ```
 
-The callback function accepts `1` argument which is an object containing some really neat location data. We're interested in the `coords` property which contains the users longitude and latitude.
+The callback function accepts `1` argument which is an object containing some really neat location data. We're interested in the `coords` property which contains the user's longitude and latitude.
 
 Let's accept an argument of `positon` in our callback and pass in `position.coords` to our `getCurrentWeather` function:
 
@@ -142,7 +142,7 @@ And finally, we'll utilize the `WeatherDash` component and provide the `currentW
 <WeatherDash v-if="currentWeather" :currentWeather="currentWeather" />
 ```
 
-After adding the `WeatherDash` component, add the following jsx to display something if our api call fails:
+After adding the `WeatherDash` component, add the following jsx to display something if our API call fails:
 
 ```jsx
 <div v-else>
@@ -156,7 +156,7 @@ You should now see the following in your Vue app:
 
 ## You Do:
 
-Your task is to display the weekly forecast using the remaining api data in the response. Your final application should look as close as possible to the following:
+Your task is to display the weekly forecast using the remaining API data in the response. Your final application should look as close as possible to the following:
 
 ![full_app](https://sei-r.s3.amazonaws.com/u4_lesson_vue_apis/full_app.png)
 
@@ -173,15 +173,15 @@ Hints:
   - [DateString](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toDateString)
   - [Get Day](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getDay)
 - Using two individual methods for the day and date will help keep logic much easier to manage.
-- The api docs give you a description of each property in the response which you can find [here](https://openweathermap.org/api/one-call-api). **You're looking for the `daily` data**.
+- The API docs give you a description of each property in the response which you can find [here](https://openweathermap.org/api/one-call-api). **You're looking for the `daily` data**.
 
 ## Recap
 
-In this lesson, we learned how to use `Vue`'s lifecycle hooks to trigger api requests. We also utilized the browsers native geolocation features to read a users current location. Vue has tons of helpful and useful lifecycle hooks for any situation you may come across. Many frameworks and libraries follow very similar flows when it comes to working with external data and makes picking up new technology easy for developers.
+In this lesson, we learned how to use `Vue`'s lifecycle hooks to trigger API requests. We also utilized the browser's native geolocation features to read a user's current location. Vue has tons of helpful and useful lifecycle hooks for any situation you may come across. Many frameworks and libraries follow very similar flows when it comes to working with external data and makes picking up new technology easy for developers.
 
 ## Resources
 
-- [Native Browser Geolocation Api](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
-- [Openweather Api](https://openweathermap.org/api)
+- [Native Browser Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+- [Openweather API](https://openweathermap.org/api)
 - [Symbol HexCodes](https://www.toptal.com/designers/htmlarrows/math/degree-sign/)
 - [Vue Lifecycle Hooks](https://v3.vuejs.org/api/options-lifecycle-hooks.html)
