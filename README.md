@@ -58,6 +58,8 @@ import axios from 'axios'
 const API_KEY = process.env.VUE_APP_WEATHER_KEY
 ```
 
+**Note: Axios is already installed for you.**
+
 Inside of our `getCurrentWeather` method, we'll set up a `GET` request to the following endpoint:
 
 `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.latitude}&lon=${coords.longitude}&units=imperial&appid=${API_KEY}`
