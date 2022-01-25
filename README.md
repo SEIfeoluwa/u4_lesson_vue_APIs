@@ -2,6 +2,8 @@
 
 ![](https://miro.medium.com/max/700/1*P3ODlZMsFN3uCmnTY3smaA.png)
 
+![](https://en.wikipedia.org/wiki/File:Django_Reinhardt_and_Duke_Ellington_(Gottlieb).jpg)
+
 ## Getting Started
 
 - Fork and clone
