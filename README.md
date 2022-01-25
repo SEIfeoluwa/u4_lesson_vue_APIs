@@ -20,6 +20,8 @@ Start by heading over to [Open Weather](https://home.openweathermap.org/users/si
 
 Take your API key and add it to the `.env` file you created earlier with a variable of `VUE_APP_WEATHER_KEY`.
 
+***Remember, anytime you make a change to a .env file, you must restart your server (npm run serve)***
+
 ## Vue Component Lifecycle Methods
 
 VueJS provides us with a few component lifecycle methods that are also known as `hooks`:
