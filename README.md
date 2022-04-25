@@ -120,7 +120,7 @@ navigator.geolocation.getCurrentPosition(async position => {
 
 Let's check our devtools to ensure the data was set correctly:
 
-![api_current_weather](https://sei-r.s3.amazonaws.com/u4_lesson_vue_apis/api_current_weather.png)
+![api_current_weather](https://i.imgur.com/aXikAwe.png)
 
 ### Passing Weather Data
 
