@@ -10,13 +10,13 @@
 </template>
 
 <script>
-export default {
-  name: 'WeatherDash',
-  props: ['currentWeather'],
-  methods: {
-    generateIconUrl(ico) {
-      return `http://openweathermap.org/img/wn/${ico}@2x.png`
+  export default {
+    name: 'WeatherDash',
+    props: ['currentWeather'],
+    methods: {
+      generateIconUrl(ico) {
+        return `http://openweathermap.org/img/wn/${ico}@2x.png`
+      }
     }
   }
-}
 </script>
