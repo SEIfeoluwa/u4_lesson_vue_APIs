@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="current">
     <h3>Current Weather</h3>
     <div>
       <h4>{{ Math.ceil(currentWeather.feels_like) }}&#176;</h4>
@@ -20,3 +20,11 @@
     }
   }
 </script>
+
+<style>
+  .current {
+    background-color: rgb(229, 234, 255);
+    width: 200px;
+    border: 2px solid rgb(139, 139, 139);
+  }
+</style>
