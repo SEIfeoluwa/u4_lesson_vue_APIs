@@ -156,7 +156,7 @@ After adding the `WeatherDash` component, add the following jsx to display somet
 
 You should now see the following in your Vue app:
 
-![current_weather](https://sei-r.s3.amazonaws.com/u4_lesson_vue_apis/current_weather.png)
+![current_weather](https://i.imgur.com/uB7VFZQ.png)
 
 ## You Do:
 
