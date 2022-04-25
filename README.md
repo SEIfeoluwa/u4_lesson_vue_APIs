@@ -162,7 +162,7 @@ You should now see the following in your Vue app:
 
 Your task is to display the weekly forecast using the remaining API data in the response. Your final application should look as close as possible to the following:
 
-![full_app](https://sei-r.s3.amazonaws.com/u4_lesson_vue_apis/full_app.png)
+![full_app](https://i.imgur.com/eZkPR6M.png)
 
 Requirements:
 
